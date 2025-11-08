@@ -5,12 +5,12 @@ export default function App() {
   useEffect(() => {
     const handleNavClick = (e) => {
       const href = e.currentTarget.getAttribute('href');
-      
+
       if (href && href.startsWith('#')) {
         e.preventDefault();
         const targetId = href.substring(1);
         const targetElement = document.getElementById(targetId);
-        
+
         if (targetElement) {
           const navbarHeight = 80; // Adjust this based on your navbar height
           const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
@@ -64,7 +64,7 @@ export default function App() {
       <div
         className="min-h-screen bg-fixed bg-center bg-no-repeat bg-cover"
         style={{
-          backgroundImage: "url('./images/811.png')",
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/811.png)`,
           backgroundColor: '#000'
         }}
       >
@@ -106,7 +106,7 @@ export default function App() {
                       </a>
                     </div>
                     <a
-                      href="./assets/images/POKLAY.pdf"
+                      href={`${process.env.PUBLIC_URL}/images/POKLAY.pdf`}
                       download
                       className="flex items-center gap-2 px-4 py-2 transition-all border rounded-lg bg-gradient-to-r from-amber-200/20 to-amber-200/10 hover:from-amber-200/30 hover:to-amber-200/20 text-amber-200 border-amber-200/30 hover:border-amber-200/50"
                     >
@@ -122,7 +122,7 @@ export default function App() {
                 <div className="p-2 transition-transform rounded-full shadow-lg md:mr-8 bg-gradient-to-br from-amber-200/20 to-transparent hover:scale-105">
                   <div className="p-1 border rounded-full border-amber-200/30">
                     <img
-                      src="images/Profile Pic.png"
+                      src={`${process.env.PUBLIC_URL}/images/Profile Pic.png`}
                       alt="Profile Photo"
                       className="object-cover border-2 rounded-full w-60 h-60 border-amber-200/40"
                     />
@@ -141,7 +141,7 @@ export default function App() {
                 <div className="flex justify-center">
                   <img
                     className="mb-3 rounded-lg w-96"
-                    src="images/GAMES.png"
+                    src={`${process.env.PUBLIC_URL}/images/GAMES.png`}
                     alt="about photo"
                   />
                 </div>
@@ -175,7 +175,7 @@ export default function App() {
                   { name: 'MongoDB', img: 'cdnlogo.com_mongodb-icon.svg' }
                 ].map((skill) => (
                   <div key={skill.name} className="flex items-center gap-3 px-3 py-4 transition-colors border rounded border-amber-200 hover:bg-amber-200 hover:bg-opacity-10">
-                    <img src={`images/${skill.img}`} alt={skill.name} className="object-cover w-10 h-10" />
+                    <img src={`${process.env.PUBLIC_URL}/images/${skill.img}`} alt={skill.name} className="object-cover w-10 h-10" />
                     <span className="text-sm font-medium">{skill.name}</span>
                   </div>
                 ))}
@@ -194,7 +194,7 @@ export default function App() {
                   { name: 'Google Colab', img: 'Colab.png' }
                 ].map((tool) => (
                   <div key={tool.name} className="flex items-center gap-3 px-3 py-4 transition-colors border rounded border-amber-200 hover:bg-amber-200 hover:bg-opacity-10">
-                    <img src={`images/${tool.img}`} alt={tool.name} className="object-cover w-10 h-10" />
+                    <img src={`${process.env.PUBLIC_URL}/images/${tool.img}`} alt={tool.name} className="object-cover w-10 h-10" />
                     <span className="text-sm font-medium">{tool.name}</span>
                   </div>
                 ))}
@@ -250,7 +250,7 @@ export default function App() {
                 ].map((edu, index) => (
                   <div key={index} className="flex items-stretch gap-4">
                     <div className="flex items-center rounded-md">
-                      <img src={`images/${edu.logo}`} alt={`${edu.school} Logo`} className="object-contain w-16 h-16" />
+                      <img src={`${process.env.PUBLIC_URL}/images/${edu.logo}`} alt={`${edu.school} Logo`} className="object-contain w-16 h-16" />
                     </div>
                     <div className={`pl-4 border-l-4 border-${edu.color}-400 hover:border-${edu.color}-500 transition-colors`}>
                       <h3 className={`text-lg font-semibold text-${edu.color}-300 mb-2`}>{edu.title}</h3>
@@ -286,7 +286,7 @@ export default function App() {
                     </p>
                   </div>
                   <button
-                    onClick={() => window.open('images/cert.jpg', '_blank')}
+                    onClick={() => window.open(`${process.env.PUBLIC_URL}/images/cert.jpg`, '_blank')}
                     className="inline-block px-4 py-2 font-medium text-black transition rounded bg-amber-500 hover:bg-amber-600"
                   >
                     View Certificate
@@ -304,7 +304,7 @@ export default function App() {
               <div className="flex flex-col gap-8 p-4 md:flex-row">
                 <div className="flex-shrink-0">
                   <img
-                    src="images/OOAK.png"
+                    src={`${process.env.PUBLIC_URL}/images/OOAK.png`}
                     alt="Project Thumbnail"
                     className="object-cover border-2 border-gray-700 w-60 h-60"
                   />
