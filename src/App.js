@@ -106,7 +106,7 @@ export default function App() {
                       </a>
                     </div>
                     <a
-                      href={`${process.env.PUBLIC_URL}/images/POKLAY.pdf`}
+                      href={`${process.env.PUBLIC_URL}/images/Herson Kurt T. Poklay-Resume.pdf`}
                       download
                       className="flex items-center gap-2 px-4 py-2 transition-all border rounded-lg bg-gradient-to-r from-amber-200/20 to-amber-200/10 hover:from-amber-200/30 hover:to-amber-200/20 text-amber-200 border-amber-200/30 hover:border-amber-200/50"
                     >
